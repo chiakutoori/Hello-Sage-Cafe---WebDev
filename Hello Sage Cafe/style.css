@@ -1,43 +1,69 @@
-body
-{
-    background-color: rgb(193, 166, 93);
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFDE61; /* Background Yellow */
 }
 
-.bodyText
-{
+/* Header Styles */
+.header {
+    background-color: #838216; /* Matcha Greenish Color */
+    color: #FFD000; /* Text Yellow */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: #FFD000; /* Text Yellow */
+    margin-left: 20px;
+}
+
+.nav-buttons a:hover {
+    color: #FBA619; /* Orange-like Color */
+}
+
+/* Hero Section */
+.hero img {
+    width: 100%;
+}
+
+/* Menu Section */
+.menu-section {
     text-align: center;
 }
-.header
-{
-    background-color: green;
-    width: 100%;
-    height: 50%;
-    float: left;
-    margin-top: -20px;
-    margin-left: -10px;
-    margin-right: -10px;
-    padding: 10px;
-    padding-left: 20px;
+
+.menu-section h2 {
+    color: #838216; /* Matcha Greenish Color */
 }
 
-.headerbuttons
-{
-    float: right;
-    margin-top: -85px;
-    border-radius: 15px;
-    background-color: yellow;
-    padding: 25px;
+.menu-items {
+    display: flex;
+    justify-content: center;
 }
-a
-{
-    text-decoration: none;
-    color: rgba(138, 49, 49, 0.797);
-    font-size: 20px;
+
+.item {
+    margin: 10px;
 }
-a:hover
-{
-    text-decoration: none;
-    color: rgba(138, 49, 49, 0.797);
-    font-size: 20px;
-    background-color: rgba(165, 42, 42, 0.71);
+
+.item img {
+    width: 200px;
+}
+
+.item p {
+    color: #838216; /* Matcha Greenish Color */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #838216; /* Matcha Greenish Color */
+    color: #FFD000; /* Text Yellow */
+    text-align: center;
+    padding: 10px 0;
 }
