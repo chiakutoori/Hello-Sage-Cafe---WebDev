@@ -67,3 +67,63 @@ body {
     text-align: center;
     padding: 10px 0;
 }
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-section {
+    flex: 1;
+    min-width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hero-section.section-left {
+    background-color: #616015; /* Starbucks dark green */
+    color: #FFD000;
+    padding: 20px;
+}
+
+.hero-section.section-right {
+    background-color: #105f27; /* Light gray background */
+}
+
+.hero-section.section-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the key property */
+    max-width: none;
+}
+
+.text-content {
+    text-align: left;
+}
+
+.text-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: #1e3932;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.button:hover {
+    background-color: #cccccc;
+}
