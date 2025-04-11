@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Button Example</title>
+
+</head>
+<body style="background-color: rgb(221, 81, 81);">
+<!-- Text will hide after button click-->
+
+<div class="text1">
+<p id="textToHide">Hi,<br>Can you be my Valentine?</p></div>
+
+<!-- Button that will trigger the action -->
+<div class="btn">
+<a href="yes.html"><button id="myButton" onclick="showText()" class="myButton">Yes!</button></a>
+<a href="no.html"><button id="myButton2" onclick="showText2()" class="myButton2">No!</button></a></div>
+
+<script>
+    function showText2(){
+        alert("Sige na");
+        alert("hahahaha");
+        alert("bala ka");
+        alert("dali na");
+        alert("LOVE YOU");
+        alert("PINDOTIN MO NA");
+        var result = confirm("aRE YOU SURE?")
+        if (result == false) {
+            event.preventDefault();
+        }  
+    }
+</script>
+
+
+<p  style="text-align: center; margin-top: 10%; background-color: black; color: white;">Created by Daylan</p>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

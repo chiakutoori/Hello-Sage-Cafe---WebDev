@@ -1,0 +1,68 @@
+#textToShow {
+    display: none;
+  }
+ 
+.hakdog {
+  font-size: 100px;
+}  
+
+.hidden {
+  display: none;
+}
+
+#textToShow2 {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  text-decoration: none;
+  text-align: center;  
+}
+
+.text1 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 150px;
+  font-size: 50px;
+  font-family: Lucida Handwriting
+}
+
+#myButton{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px ;
+  padding-bottom:5px ;
+  font-weight: bold;
+  font-family: Poppins;
+  border: 2px solid green;
+  font-size: 200px;
+  transition: background-color 0.3s ease;
+}
+
+#myButton2{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px ;
+  padding-bottom:5px ;
+  font-weight: bold;
+  font-family: Poppins;
+  border: 2px solid red;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.myButton:hover{
+  background-color: green;
+  color: white;
+
+}
+
+.myButton2:hover{
+  background-color: red;
+  color: white;
+
+}

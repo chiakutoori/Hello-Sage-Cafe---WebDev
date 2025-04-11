@@ -1,0 +1,9 @@
+#noButton {
+    text-decoration: line-through;
+    background-color: rgba(255, 0, 0, 0.288);
+}
+
+#yesButton {
+    background-color: rgba(0, 255, 0, 0.534);
+    font-size: 30px;
+}

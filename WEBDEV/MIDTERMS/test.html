@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+    </style>
+</head>
+<body style="background-color:rgb(145, 112, 112);">
+    <h1 style="color:white;"> Anton Demi Pogi </h1>
+    <p style="color: blue;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, possimus. Dolorem in ipsum voluptas vitae dolore. Magnam tempora et debitis nesciunt, beatae, quibusdam, qui aliquid atque praesentium nemo corporis eligendi.</p>
+    <p style="background-color: gray;"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem atque sit fugiat aperiam aliquid natus qui in, neque temporibus reiciendis magni ab. Commodi dicta ratione eum ab repellendus quam est.</p>
+
+
+<!-- Midterm Act 2, Forms ang coverage nya 24/03/2025 -->
+
+<section class="wrapper-main">
+    <form action="example.html" method="post" class="form-container"> 
+        <h2>Registration Form</h2>
+        
+        <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" id="pwd" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <label for="firstname">Firstname</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Write something cool</label>
+            <textarea name="Ewan" id="message" placeholder="Write a message..." cols="30" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Pick your eye color</label>
+            <div class="radio-group">
+                <input type="radio" id="eyecolorblue" name="eyecolor" value="Blue">
+                <label for="eyecolorblue">Blue</label>
+                <input type="radio" id="eyecolorbrown" name="eyecolor" value="Brown">
+                <label for="eyecolorbrown">Brown</label>
+                <input type="radio" id="eyecolorgreen" name="eyecolor" value="Green">
+                <label for="eyecolorgreen">Green</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>What pets do you have?</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="petcat" name="petcat" value="cat">
+                <label for="petcat">Cat</label>
+                <input type="checkbox" id="petdog" name="petdog" value="dog">
+                <label for="petdog">Dog</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cartype">Car type you own</label>
+            <select name="cartype" id="cartype" required>
+                <option value="none">None</option>
+                <option value="Ford">Ford</option>
+                <option value="Mustang">Mustang</option>
+            </select>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</section>
+
+
+ </body>
+</html>
