@@ -15,8 +15,33 @@ body {
     align-items: center;
 }
 
-.header h1 {
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-container h1 {
+    margin: 0;
     font-size: 2rem;
+    color: #FFD000;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #FFD000;
+    padding: 3px;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .nav-buttons a {
@@ -29,45 +54,12 @@ body {
     color: #FBA619; /* Orange-like Color */
 }
 
+/* Section Spacing */
+.hero, .rewards-section, .menu-section {
+    margin: 40px 0;
+}
+
 /* Hero Section */
-.hero img {
-    width: 50%;
-}
-
-/* Menu Section */
-.menu-section {
-    text-align: center;
-}
-
-.menu-section h2 {
-    color: #838216; /* Matcha Greenish Color */
-}
-
-.menu-items {
-    display: flex;
-    justify-content: center;
-}
-
-.item {
-    margin: 10px;
-}
-
-.item img {
-    width: 200px;
-}
-
-.item p {
-    color: #838216; /* Matcha Greenish Color */
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #838216; /* Matcha Greenish Color */
-    color: #FFD000; /* Text Yellow */
-    text-align: center;
-    padding: 10px 0;
-}
-
 .hero {
     display: flex;
     flex-wrap: wrap;
@@ -96,8 +88,53 @@ body {
 .hero-section.section-right img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This is the key property */
+    object-fit: cover;
     max-width: none;
+}
+
+/* Rewards Section */
+.rewards-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+.rewards-section .image-half {
+    flex: 1;
+    min-width: 300px;
+    overflow: hidden;
+}
+
+.rewards-section .image-half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rewards-section .content-half {
+    flex: 1;
+    min-width: 300px;
+    background-color: #616015;
+    color: #FFD000;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rewards-section .content-half h2 {
+    font-size: 2.5em;
+    margin-bottom: 24px;
+    color: #FFD000;
+}
+
+.rewards-section .content-half p {
+    font-size: 1.2em;
+    margin-bottom: 32px;
+    max-width: 500px;
+    line-height: 1.5;
 }
 
 .text-content {
@@ -115,6 +152,32 @@ body {
     margin-bottom: 20px;
 }
 
+/* Menu Section */
+.menu-section {
+    text-align: center;
+}
+
+.menu-section h2 {
+    color: #838216; /* Matcha Greenish Color */
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    margin: 10px;
+}
+
+.item img {
+    width: 200px;
+}
+
+.item p {
+    color: #838216; /* Matcha Greenish Color */
+}
+
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -127,3 +190,12 @@ body {
 .button:hover {
     background-color: #cccccc;
 }
+
+/* Footer Styles */
+.footer {
+    background-color: #838216; /* Matcha Greenish Color */
+    color: #FFD000; /* Text Yellow */
+    text-align: center;
+    padding: 10px 0;
+}
+
