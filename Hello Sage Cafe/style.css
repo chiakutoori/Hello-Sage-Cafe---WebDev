@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #FFDE61; /* Background Yellow */
 }
 
@@ -23,8 +23,10 @@ body {
 
 .logo-container h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #FFD000;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .logo {
@@ -48,6 +50,7 @@ body {
     text-decoration: none;
     color: #FFD000; /* Text Yellow */
     margin-left: 20px;
+    font-weight: 500;
 }
 
 .nav-buttons a:hover {
@@ -55,8 +58,20 @@ body {
 }
 
 /* Section Spacing */
-.hero, .rewards-section, .menu-section {
+.hero, .rewards-section {
     margin: 40px 0;
+}
+
+.menu-section {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.menu-section.animate {
+    opacity: 1;
 }
 
 /* Hero Section */
@@ -125,16 +140,22 @@ body {
 }
 
 .rewards-section .content-half h2 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 24px;
     color: #FFD000;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
 }
 
 .rewards-section .content-half p {
     font-size: 1.2em;
     margin-bottom: 32px;
     max-width: 500px;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #FFD000;
 }
 
 .text-content {
@@ -142,42 +163,72 @@ body {
 }
 
 .text-content h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #FFD000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
 }
 
 .text-content p {
-    font-size: 1em;
-    line-height: 1.4;
-    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 300;
+    color: #FFD000;
 }
 
 /* Menu Section */
-.menu-section {
-    text-align: center;
-}
-
 .menu-section h2 {
     color: #838216; /* Matcha Greenish Color */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 3em; /* Increased from 2.5em */
 }
 
 .menu-items {
     display: flex;
     justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+    padding: 0 20px;
 }
 
 .item {
-    margin: 10px;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    flex: 1;
+    max-width: 300px;
+}
+
+.item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.item:nth-child(3) {
+    animation-delay: 0.6s;
 }
 
 .item img {
-    width: 200px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .item p {
-    color: #838216; /* Matcha Greenish Color */
+    color: #838216;
+    margin-top: 15px;
+    font-size: 1.1em;
+    padding: 0 10px;
 }
 
+/* Button Styles */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -185,10 +236,26 @@ body {
     color: #1e3932;
     text-decoration: none;
     border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .button:hover {
     background-color: #cccccc;
+}
+
+.view-more {
+    margin-top: 20px;
+}
+
+.view-more .button {
+    background-color: #838216;
+    color: #FFD000;
+}
+
+.view-more .button:hover {
+    background-color: #616015;
+    transform: translateY(-2px);
 }
 
 /* Footer Styles */
@@ -197,5 +264,239 @@ body {
     color: #FFD000; /* Text Yellow */
     text-align: center;
     padding: 10px 0;
+    font-weight: 300;
+}
+
+/* Menu Page Styles */
+.menu-page {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #FFDE61;
+}
+
+.menu-page h2 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.menu-page .menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-page .item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-page .item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-page .item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.menu-page .item p {
+    color: #838216;
+    font-size: 1.1em;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About Us Page Styles */
+.about-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: left;
+    color: #838216;
+    line-height: 1.8;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.about-text h3 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin: 30px 0 15px;
+}
+
+.about-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.about-text ul li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.about-text ul li:before {
+    content: "•";
+    color: #FFD000;
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3, .contact-form h3 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #838216;
+    margin: 10px 0;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #838216;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #FFD000;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #838216;
+}
+
+.submit-button {
+    background-color: #838216;
+    color: #FFD000;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #616015;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form {
+        max-width: 100%;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
 }
 

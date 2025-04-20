@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Sage Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +22,7 @@
         </div>
         <nav class="nav-buttons">
             <a href="aboutUs.html">About Us</a>
-            <a href="#menu">Menu</a>
+            <a href="menu.html">Menu</a>
             <a href="contact.html">Contact</a>
         </nav>
     </div>
@@ -34,14 +37,14 @@
             </div>
         </div>
         <div class="hero-section section-right">
-            <img src="Hello sage main.jpg" alt="Hello Sage">
+            <img src="Hello sage main 2.jpg" alt="Hello Sage">
         </div>
     </div>
 
     <!-- Rewards Section -->
     <div class="rewards-section">
         <div class="image-half">
-            <img src="Hello sage main 2.jpg" alt="Hello Sage Special Drink">
+            <img src="Hello sage main.jpg" alt="Hello Sage Special Drink">
         </div>
         <div class="content-half">
             <h2>It's a great day for a coffee and snack</h2>
@@ -50,8 +53,8 @@
         </div>
     </div>
 
-    <!-- Menu Section -->
-    <div id="menu" class="menu-section">
+    <!-- Featured Specialties Section -->
+    <div class="menu-section">
         <h2>Our Specialties</h2>
         <div class="menu-items">
             <div class="item">
@@ -67,11 +70,35 @@
                 <p>Matcha Sugar Cookies - Sweet and earthy matcha goodness.</p>
             </div>
         </div>
+        <div class="view-more">
+            <a href="menu.html" class="button">View Full Menu</a>
+        </div>
     </div>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; 2025 Hello Sage Cafe. All rights reserved.</p>
     </footer>
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScrollAnimation() {
+            const menuSection = document.querySelector('.menu-section');
+            if (isInViewport(menuSection)) {
+                menuSection.classList.add('animate');
+            }
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+    </script>
 </body>
 </html>
