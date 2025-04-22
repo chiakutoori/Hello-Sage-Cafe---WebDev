@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Hello Sage Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-section {
+            padding: 40px 0;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #FFDE61;
+        }
+
+        .gallery-section h2 {
+            color: #838216;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 0 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            aspect-ratio: 3/4;
+            background-color: white;
+            cursor: pointer;
+            min-height: 500px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-image-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.08);
+        }
+
+        .gallery-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-content {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            margin: 0;
+            font-size: 1.4em;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            font-size: 1em;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0.95;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        @media (max-width: 1600px) {
+            .gallery-grid {
+                max-width: 1400px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gallery-section h2 {
+                font-size: 2.5em;
+                margin-bottom: 30px;
+            }
+
+            .gallery-item {
+                min-height: 400px;
+            }
+        }
+
+        .banner-section {
+            width: 100%;
+            padding: 40px 0;
+            background-color: #FFDE61;
+        }
+
+        .banner-container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+        }
+
+        .banner-image:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 1600px) {
+            .banner-container {
+                max-width: 1400px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .banner-container {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.jpg" alt="Hello Sage Cafe Logo">
+                </a>
+            </div>
+            <h1>Hello Sage Cafe</h1>
+        </div>
+        <nav class="nav-buttons">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner-section">
+        <div class="banner-container">
+            <img src="banner.jpg" alt="Hello Sage Cafe Banner" class="banner-image">
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="matchaberi.jpg" alt="Matcha Berry Delights" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>Matcha Berry Delights</h3>
+                        <p>Signature beverages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="theaftermath.jpg" alt="Afternoon Tea Experience" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>Afternoon Tea</h3>
+                        <p>Elegant experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="eastereats.jpg" alt="Easter Special Menu" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>Easter Special</h3>
+                        <p>Seasonal treats</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="delicious.jpg" alt="Delicious Treats" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>Delicious Treats</h3>
+                        <p>Handcrafted delights</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="delicious1.jpg" alt="More Delights" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>More Delights</h3>
+                        <p>Sweet creations</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <div class="gallery-image-container">
+                    <img src="delicious2.jpg" alt="Special Treats" class="gallery-image">
+                </div>
+                <div class="gallery-content">
+                    <div class="gallery-caption">
+                        <h3>Special Treats</h3>
+                        <p>Unique flavors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" onclick="closeLightbox()">
+        <button class="close-button" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 Hello Sage Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openLightbox(element) {
+            const lightbox = document.querySelector('.lightbox');
+            const lightboxImage = document.querySelector('.lightbox-image');
+            const lightboxCaption = document.querySelector('.lightbox-caption');
+            const image = element.querySelector('.gallery-image');
+            const caption = element.querySelector('.gallery-caption h3').textContent;
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html> 
