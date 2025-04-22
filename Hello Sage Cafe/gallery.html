@@ -186,43 +186,41 @@
 
         .banner-section {
             width: 100%;
-            padding: 40px 0;
+            padding: 60px 0;
             background-color: #FFDE61;
+            text-align: center;
         }
 
         .banner-container {
-            max-width: 1800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .banner-image {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease;
+        .banner-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            color: #838216;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        .banner-image:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 1600px) {
-            .banner-container {
-                max-width: 1400px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .banner-container {
-                max-width: 1000px;
-            }
+        .banner-subtext {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            color: #4a4a4a;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
-            .banner-container {
-                padding: 0 15px;
+            .banner-text {
+                font-size: 2em;
+            }
+            .banner-subtext {
+                font-size: 1em;
             }
         }
     </style>
@@ -249,7 +247,8 @@
     <!-- Banner Section -->
     <div class="banner-section">
         <div class="banner-container">
-            <img src="banner.jpg" alt="Hello Sage Cafe Banner" class="banner-image">
+            <h2 class="banner-text">Capturing Sweet Moments</h2>
+            <p class="banner-subtext">Every dish tells a story, every sip creates a memory. Welcome to our visual journey through Hello Sage Cafe's delightful creations, where passion meets perfection in every frame.</p>
         </div>
     </div>
 
