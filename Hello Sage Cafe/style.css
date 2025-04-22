@@ -268,54 +268,78 @@ body {
 }
 
 /* Menu Page Styles */
-.menu-page {
-    padding: 60px 20px;
+.menu-title {
+    background-color: #838216;
+    padding: 40px 0;
     text-align: center;
+}
+
+.menu-title h1 {
+    color: #FFD000;
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
     background-color: #FFDE61;
 }
 
-.menu-page h2 {
-    color: #838216;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-.menu-page .menu-items {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.menu-page .item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.menu-item {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    position: relative;
 }
 
-.menu-page .item:hover {
+.menu-item:hover {
     transform: translateY(-5px);
 }
 
-.menu-page .item img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+.menu-item h2 {
+    color: #838216;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    margin: 15px;
+    text-align: center;
 }
 
-.menu-page .item p {
+.menu-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.price {
     color: #838216;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    font-weight: 600;
     margin: 0;
-    font-weight: 400;
+}
+
+.portion {
+    color: #838216;
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+    font-style: italic;
 }
 
 /* Animations */
@@ -498,5 +522,13 @@ body {
     .about-content {
         flex-direction: column;
     }
-}
 
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px;
+    }
+
+    .menu-title h1 {
+        font-size: 3em;
+    }
+}
