@@ -7,12 +7,13 @@ body {
 
 /* Header Styles */
 .header {
-    background-color: #838216; /* Matcha Greenish Color */
-    color: #FFD000; /* Text Yellow */
+    background-color: #838216;
+    color: #FFD000;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .logo-container {
@@ -25,8 +26,8 @@ body {
     margin: 0;
     font-size: 2.2rem;
     color: #FFD000;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
@@ -49,17 +50,18 @@ body {
 
 .nav-buttons a {
     text-decoration: none;
-    color: #FFD000; /* Text Yellow */
+    color: #FFD000;
     margin-left: 30px;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
     padding: 8px 16px;
     border-radius: 25px;
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-buttons a:hover {
-    color: #FBA619; /* Orange-like Color */
+    color: #FFD000;
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
 }
