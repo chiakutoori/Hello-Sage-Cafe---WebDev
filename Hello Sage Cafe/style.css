@@ -562,4 +562,124 @@ body {
     .menu-title h1 {
         font-size: 3em;
     }
+
+    .about-hero {
+        height: 40vh;
+    }
+    
+    .about-hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Social Media Section Styles */
+.social-media-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.social-media-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.social-media-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-link img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.social-link span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+.social-feed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feed-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feed-item:hover {
+    transform: scale(1.05);
+}
+
+.feed-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.feed-item:hover img {
+    transform: scale(1.1);
+}
+
+/* About Page Hero Section */
+.about-hero {
+    position: relative;
+    height: 60vh;
+    background-image: linear-gradient(rgba(131, 130, 22, 0.7), rgba(131, 130, 22, 0.7)), url('about-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.about-hero-content {
+    text-align: center;
+    color: #FFD000;
+    padding: 20px;
+}
+
+.about-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    animation: fadeInUp 1s ease-out;
 }
